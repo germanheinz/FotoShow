@@ -1,0 +1,30 @@
+<ion-header no-border>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <!-- <ion-icon name="flame-outline"></ion-icon> -->
+            <img src="../assets/icon/favicon.png" style="width: 52%;" alt="">
+        </ion-buttons>
+        <ion-title>
+            Photogram
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" colo="light">
+    <!-- --Refresher -->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <!-- Posts -->
+    <app-posts [posts]="posts"></app-posts>
+
+    <!-- Infinite Scroll -->
+
+    <ion-infinite-scroll [disabled]="!able" threshold="150px" (ionInfinite)="next($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

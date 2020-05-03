@@ -1,0 +1,22 @@
+.img-avatar {
+    width: 150px;
+}
+
+.top-20 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+:host {
+    ion-item {
+        // --border-color: rgb(10, 10, 10); // default underline color
+        --highlight-color-invalid: rgb(255, 115, 0); // invalid underline color
+        --highlight-color-valid: #f78604; // valid underline color
+    }
+}
+
+.ionicon,
+.s-ion-icon,
+.icon-inner {
+    color: red;
+}

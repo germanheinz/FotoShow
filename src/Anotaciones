@@ -1,0 +1,92 @@
+#########PHOTOGRAMAPP#######
+-terminal- creo el ptoyecto con tab - ionic start photogramapp tabs
+-terminal- creo pagina de login dentro de carpeta page - ionic g page pages/login
+-muevo todos los tabs a la carpeta pages y modifico el app-routings
+
+#03
+-termianl- Creando Services ionic g s services/posts, importo HttpclientModule en appModule
+-En tab1 pruebo el service
+-Issue con el Cors, se debe arreglar en backend
+
+#05
+-terminal creo un modulo nuevo que me englobe todos los modulos futuros ionic g m components
+-terminal ionic g m components/posts
+1- consumo el servicio en tab1, y lo guardo en variable del tipo de la interfaz
+2- Paso variable al hijo, posts. En .html de tab1 <app-posts [postsHijo]="postsPadre"
+3- Recibo con Input la variable en posts, 
+4- en el html de posts ngfor de cada uno y se lo envio al Post
+
+#06
+Necesitamos que todas las imagenes sean del mismo tamaño, para eso creamos un Pipe 
+para recibir las imagenes y pasarlas por [style]=...pipe
+Pipe DomSanitizer
+
+#7
+Implemento el infinite Scroll en tab1
+| en next(event?) puedo indicarle que sea opcional el event,
+para que no aparezca error
+
+#8
+Refresher - cuando termine el infinite scroll, se podra volver arriba y refrescar
+los nuevos posts, seteara la pagina nuevamente a 1
+| issue - fue necesario modificar el servicio paara preguntarle si esta o no habilitado
+
+#10
+Creacion de la pagina de login
+-cambiar el routing, para que la primera pagina en iniciar sea la de login
+
+
+#11
+En login cancelo el slide de login y register, solo esta disponible el slide de avatar
+Doy funcionalidad a los botones
+
+#12
+Service Usuario, Agrego el plugin Storage de Ionic en appmodule y lo uso en servicio
+Hago una promesa en servicio para obtener la respuesta,resuelva y me entregue true o false
+
+#13
+Centralizando todas las alertas.
+Login Completo, Mensaje de Alert
+
+#14
+Implementando el guards ionic g guard guards/Usuario
+-cambiar el canActivated a canLoad
+Implementarlo en app-routing
+
+#15
+Implementando Update User en Tab3
+-Verificar si existe token
+-ngModel en html para cargar datos
+
+#16
+Actualizando el usuario, y mostrando img
+
+#17
+Update Avatars, enviando del padre al hijo la opcion seleccionada
+
+#18
+Creando pagina para Posts
+
+#19
+Quiero que al crear un post, vaya a tab1 y que me cargue con el primer post arriba
+si no esta inicializada tab1 va a cargar el ultimo Mensaje
+si tab1 existiera va a estar escuchando con el observer del mismo tab en ngOnInit
+
+#20
+GeoLocalizacion
+
+#21
+para correrlo en android
+ionic cordova run android
+
+#24
+Upload Image - File Transfer
+ionic cordova plugin add cordova-plugin-file-transfer
+npm install @ionic-native/file-transfer
+ver como hice en Html para que de ok 
+
+#25
+Logout 
+
+
+https://cssgradient.io/

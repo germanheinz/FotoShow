@@ -1,0 +1,131 @@
+<ion-content>
+
+
+    <ion-slides class="mainSlide" #slidePrincipal>
+
+        <ion-slide>
+            <ion-row class="ion-justify-content-center">
+                <ion-col size="12" size-lg="4" size-md="4" size-sm="12" size-xs="12" size="6">
+                    <form (ngSubmit)="login(f)" #f="ngForm">
+                        <ion-grid fixed>
+
+                            <ion-row>
+                                <ion-col>
+                                    <img src="/assets/avatars/av-1.png">
+                                </ion-col>
+                            </ion-row>
+
+                            <ion-row>
+                                <ion-col>
+
+                                    <ion-list>
+
+                                        <ion-item>
+                                            <ion-label>Email</ion-label>
+                                            <ion-input [(ngModel)]="loginUser.email" name="email" type="email" required></ion-input>
+                                        </ion-item>
+
+                                        <ion-item class="ion-item">
+                                            <ion-label>Password</ion-label>
+                                            <ion-input [(ngModel)]="loginUser.password" name="password" type="password" required></ion-input>
+                                        </ion-item>
+
+                                    </ion-list>
+                                </ion-col>
+                            </ion-row>
+
+                            <ion-row class="ion-justify-content-center" style="padding-top: 20px;">
+                                <ion-col size="12" size-lg="4" size-md="4" size-sm="12" size-xs="12" size="6">
+                                    <ion-button type="submit" color="favorite" class="button" shape="round">
+                                        Login
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+
+                        </ion-grid>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+
+        <ion-slide>
+
+
+            <ion-grid fixed>
+                <ion-row class="ion-justify-content-center">
+                    <ion-col size="12" size-lg="4" size-md="4" size-sm="12" size-xs="12" size="6">
+
+                        <!-- Avatar Selector -->
+                        <app-avatar-selector (avatarSel)='registerUser.avatar = $event'></app-avatar-selector>
+
+                        <form (ngSubmit)="register(g)" #g="ngForm">
+                            <ion-row>
+                                <ion-col>
+
+                                    <ion-list>
+
+                                        <ion-item class="ion-item">
+                                            <ion-label>Email</ion-label>
+                                            <ion-input [(ngModel)]="registerUser.email" name="email" type="email" required></ion-input>
+                                        </ion-item>
+
+                                        <ion-item class="ion-item">
+                                            <ion-label>Nombre</ion-label>
+                                            <ion-input [(ngModel)]="registerUser.nombre" name="nombre" type="text" required></ion-input>
+                                        </ion-item>
+
+                                        <ion-item>
+                                            <ion-label>Password</ion-label>
+                                            <ion-input [(ngModel)]="registerUser.password" name="password" type="password" required></ion-input>
+                                        </ion-item>
+
+                                    </ion-list>
+                                </ion-col>
+                            </ion-row>
+
+                            <ion-row>
+                                <ion-col>
+                                    <ion-button type="submit" color="favorite" shape="round" style="margin-top: 25px;">
+                                        Crear usuario
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+
+                        </form>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+
+        </ion-slide>
+
+
+    </ion-slides>
+
+
+
+</ion-content>
+
+
+<ion-footer no-border>
+    <ion-toolbar>
+
+        <ion-row class="ion-justify-content-center">
+            <ion-col size="6" size-lg="3" size-md="4" size-sm="4" size-xs="6" size="6">
+                <ion-button (click)="showLogin()" shape="round" expand="full" size="small" fill="clear" color="favorite">
+                    Ingresar
+                </ion-button>
+            </ion-col>
+
+            <ion-col size="6" size-lg="3" size-md="4" size-sm="4" size-xs="6" size="6">
+                <ion-button (click)="showRegister()" expand="full" size="small" fill="clear" color="favorite">
+                    Registrarme
+                </ion-button>
+            </ion-col>
+
+        </ion-row>
+
+
+
+    </ion-toolbar>
+</ion-footer>

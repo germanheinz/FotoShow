@@ -1,0 +1,39 @@
+.mainSlide,
+.mainSlide ion-slide {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 120px;
+}
+
+.pick-avatar {
+    width: 80px;
+    opacity: 0.3;
+}
+
+.pick-avatar-seleccionado {
+    transition: opacity 0.5s linear;
+    opacity: 1 !important;
+}
+
+:host {
+    ion-item {
+        // --border-color: rgb(10, 10, 10); // default underline color
+        --highlight-color-invalid: rgb(255, 115, 0); // invalid underline color
+        --highlight-color-valid: #f78604; // valid underline color
+    }
+}
+
+// --background {
+//     color: red;
+// }
+.ion-color-favorite {
+    --ion-color-base: var(--ion-color-favorite);
+    --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+    --ion-color-contrast: var(--ion-color-favorite-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+    --ion-color-shade: var(--ion-color-favorite-shade);
+    --ion-color-tint: var(--ion-color-favorite-tint);
+}
