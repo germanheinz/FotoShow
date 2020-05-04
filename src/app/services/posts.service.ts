@@ -50,7 +50,7 @@ const options: FileUploadOptions = {
   }
 };
 const fileTransfer: FileTransferObject = this.fileTransfer.create();
-fileTransfer.upload(img, `${URL}/post/upload`, options)
+fileTransfer.upload(img, `${URL}/posts/upload`, options)
 .then(data => {
   console.log(data);
 }).catch(err => {

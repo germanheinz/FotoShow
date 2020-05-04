@@ -25,6 +25,7 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     Geolocation,
     Camera,
     FileTransfer,
+    HttpClientModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

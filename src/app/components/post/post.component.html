@@ -10,12 +10,12 @@
         </ion-label>
     </ion-item>
 
-    <ion-slides mode="ios" pager="ios" scrollbar="ios" *ngIf="post.imgs.length > 1">
+    <ion-slides pager="true" mode="ios" pager="ios" scrollbar="ios" *ngIf="post.imgs.length > 1">
         <ion-slide class="image-slide" *ngFor="let img of post.imgs" [style]="(img | image: post.usuario._id) | domSanitizer">
         </ion-slide>
     </ion-slides>
 
-    <ion-slides mode="ios" pager="ios" scrollbar="ios" *ngIf="post.imgs.length === 1" [options]="slideOpts">
+    <ion-slides mode="ios" *ngIf="post.imgs.length === 1" [options]="slideOpts">
         <ion-slide class="image-slide" [style]="(post.imgs[0] | image: post.usuario._id) | domSanitizer">
         </ion-slide>
     </ion-slides>

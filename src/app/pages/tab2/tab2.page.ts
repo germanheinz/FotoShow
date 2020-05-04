@@ -61,7 +61,7 @@ export class Tab2Page {
   }
   cameraSetting(){
     const options: CameraOptions = {
-      quality: 100,
+      quality: 60,
       destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
@@ -73,13 +73,14 @@ export class Tab2Page {
 
   library(){
       const options: CameraOptions = {
-      quality: 100,
+      quality: 60,
       destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
-    }
+    };
+    this.imageProcessor(options);
   }
 
   imageProcessor(options: CameraOptions){
@@ -88,7 +89,8 @@ export class Tab2Page {
       // If it's base64 (DATA_URL):
      //  let base64Image = 'data:image/jpeg;base64,' + imageData;
  
-     const img = window.Ionic.WebViewConvertFileSrc(imageData);
+     const img = window.Ionic.WebView.convertFileSrc(imageData);
+     this.postsService.uploadFile(imageData);
      this.tempImages.push(img);
  
      }, (err) => {

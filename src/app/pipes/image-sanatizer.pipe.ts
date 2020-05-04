@@ -11,7 +11,7 @@ export class ImageSanatizerPipe implements PipeTransform {
 
   transform(img: any): any {
 
-    return this.domSanitizer.bypassSecurityTrustStyle(img);
+    return this.domSanitizer.bypassSecurityTrustUrl(img);
   }
 
 }
