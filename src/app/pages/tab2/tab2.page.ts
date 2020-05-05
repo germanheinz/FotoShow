@@ -35,8 +35,9 @@ export class Tab2Page {
           coords: '',
           postPosition: false
         };
-        this.tempImages= [];
+        this.tempImages = [];
     }
+    this.tempImages = [];
     this.router.navigateByUrl('/main/tabs/tab1');
   }
   geoLocation(){
