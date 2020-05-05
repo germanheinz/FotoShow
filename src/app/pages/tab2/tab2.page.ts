@@ -29,14 +29,11 @@ export class Tab2Page {
   async crearPost(){
     console.log(this.post);
     const created = await this.postsService.createPost(this.post);
-    if(!created){
-      this.post = {
-          mensaje: '',
-          coords: '',
-          postPosition: false
-        };
-        this.tempImages = [];
-    }
+    this.post = {
+        mensaje: '',
+        coords: null,
+        postPosition: false
+      };
     this.tempImages = [];
     this.router.navigateByUrl('/main/tabs/tab1');
   }
